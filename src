@@ -1,8 +1,0 @@
-<script>start("/Users/Shared/Code/testing/src/");</script>
-<script>onHasParentDirectory();</script>
-<script>addRow("BRAIN","BRAIN",1,160,"160 B",1733993791,"12/12/2024, 14:26:31");</script>
-<script>addRow("CONVERSATION","CONVERSATION",1,192,"192 B",1734051828,"13/12/2024, 06:33:48");</script>
-<script>addRow("DATA","DATA",1,160,"160 B",1734095458,"13/12/2024, 18:40:58");</script>
-<script>addRow("FUNCTION","FUNCTION",1,448,"448 B",1734891452,"22/12/2024, 23:47:32");</script>
-<script>addRow("KEYBOARD","KEYBOARD",1,128,"128 B",1733924678,"11/12/2024, 19:14:38");</script>
-<script>addRow("VISION","VISION",1,96,"96 B",1734891342,"22/12/2024, 23:45:42");</script>
