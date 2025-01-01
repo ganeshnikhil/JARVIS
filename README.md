@@ -32,7 +32,47 @@ Before running the project, ensure you have the following installed:
    cd JARVIS
    ```
 
-2. **Install Dependencies**:
+2.**File structure**
+```bash .
+├── details.txt
+├── main.py
+├── src
+│   ├── BRAIN
+│   │   ├── func_call.py
+│   │   ├── lm_ai.py
+│   │   └── text_to_info.py
+│   ├── CONVERSATION
+│   │   ├── speech_to_text.py
+│   │   ├── t_s.py
+│   │   ├── test_speech.py
+│   │   └── text_to_speech.py
+│   ├── DATA
+│   │   ├── email.py
+│   │   ├── msg.py
+│   │   └── tools.json
+│   ├── FUNCTION
+│   │   ├── Email_send.py
+│   │   ├── ai_op.py
+│   │   ├── app_op.py
+│   │   ├── get_env.py
+│   │   ├── greet_time.py
+│   │   ├── incog.py
+│   │   ├── link_op.py
+│   │   ├── news.py
+│   │   ├── random_respon.py
+│   │   ├── run_function.py
+│   │   ├── weather.py
+│   │   └── youtube_downloader.py
+│   ├── KEYBOARD
+│   │   ├── key_lst.py
+│   │   └── key_prs_lst.py
+│   └── VISION
+│       └── eye.py
+└── tools.py
+
+8 directories, 28 files
+```
+3. **Install Dependencies**:
    Install the required Python libraries by running:
    ```bash
    pip install -r requirements.txt
