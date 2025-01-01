@@ -24,8 +24,52 @@ Before running the project, ensure you have the following installed:
 - **Python 3.9 or later**
 - Required libraries (listed in `requirements.txt`)
 
-## Installation
+### Configuration
 
+1. **Create a `.env` file** in the root directory of the project.
+
+2. **Add your API keys and other configuration variables** to the `.env` file. Here’s a sample structure:
+
+   ```dotenv
+   Weather_api=your_weather_api_key
+   News_api=your_news_api_key
+   Sender_email = your_email
+   Receiver_email = subject_email
+   Password_email = email_password.
+   ```
+3. **Setup the keys and passwords.
+   
+    [LMSTUDIO](https://lmstudio.ai)
+    ```
+       - Download llm models from lm studio these model run locally on your system.
+       - llava-phi-3-mini-gguf  (intall vision adapter)  (image + text) model
+       - NousResearch/Hermes-2-Pro-Mistral-7B-GGUF (install from lm studio for function calling)
+    ````
+    [WEATHER](https://rapidapi.com/weatherapi/api/weatherapi-com)
+    ```
+       - get weather api
+    ```
+    [NEWS](https://newsapi.org)
+    ```
+       - get news api
+    ```
+    [GMAIL_PASSWORD](https://myaccount.google.com/apppasswords)
+    ```
+       - generate password to send email using smptlib
+    ```
+5. **System requirements
+    # higher is the specs better the model will perfomrm
+   ```
+    - 8gb+ ram (higher is better)
+    - 250 gb+ storage 
+    - i5 processor or m processor 
+    - gpu / npu
+   ```
+  
+   
+
+## Installation
+ 
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/ganeshnikhil/JARVIS.git
