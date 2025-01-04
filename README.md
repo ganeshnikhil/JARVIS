@@ -11,10 +11,13 @@ Welcome to the Jarvis AI Assistant project! This AI-powered assistant can perfor
 - **Speech Recognition**: Recognizes and processes user commands via speech input.
 - **AI Responses**: Provides responses using AI-generated text-to-speech output.
 - **Task Execution**: Handles multiple tasks, including:
-  - Sending emails
-  - Summarizing weather reports
-  - Reading news headlines
-  - General AI-based tasks
+  - Sending emails.
+  - Summarizing weather reports.
+  - Reading news headlines.
+  - General AI-based tasks.
+  - Image generation.
+  - Automate website and Applications.
+  - Database functions
 - **Timeout Handling**: Automatically deactivates listening mode after 5 minutes of inactivity.
 
 ## Prerequisites
