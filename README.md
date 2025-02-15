@@ -124,10 +124,8 @@ Before running the project, ensure you have the following installed:
 │   │   └── key_prs_lst.py
 │   └── VISION
 │       └── eye.py
-├── test.py
-└── tools.py
 
-8 directories, 37 file
+8 directories, 35 file
 ```
 3. **Install Dependencies**:
    Install the required Python libraries by running:
