@@ -1,4 +1,3 @@
-
 # JARVIS
 
 # Jarvis AI Assistant
@@ -17,8 +16,11 @@ Welcome to the Jarvis AI Assistant project! This AI-powered assistant can perfor
   - General AI-based tasks.
   - Image generation.
   - Automate website and Applications.
-  - Database functions
+  - Database functions.
+  - Phone call automation using ADB.
 - **Timeout Handling**: Automatically deactivates listening mode after 5 minutes of inactivity.
+- **Automatic Input Processing**: If the user does not say "stop" within 60 seconds, the input is finalized and sent to the model for processing.
+- **Multiple Function Calls**: Users can now call more than one function simultaneously, even if their inputs and outputs are unrelated.
 
 ## Prerequisites
 
@@ -40,36 +42,35 @@ Before running the project, ensure you have the following installed:
    Receiver_email = subject_email
    Password_email = email_password.
    ```
-3. **Setup the keys and passwords.
+3. **Setup the keys and passwords.**
    
     [LMSTUDIO](https://lmstudio.ai)
     ```
        - Download llm models from lm studio these model run locally on your system.
-       - llava-phi-3-mini-gguf  (intall vision adapter)  (image + text) model
+       - llava-phi-3-mini-gguf  (install vision adapter)  (image + text) model
        - NousResearch/Hermes-2-Pro-Mistral-7B-GGUF (install from lm studio for function calling)
-    ````
+    ```
+    
     [WEATHER](https://rapidapi.com/weatherapi/api/weatherapi-com)
     ```
-       - get weather api
+       - Get weather API
     ```
     [NEWS](https://newsapi.org)
     ```
-       - get news api
+       - Get news API
     ```
     [GMAIL_PASSWORD](https://myaccount.google.com/apppasswords)
     ```
-       - generate password to send email using smptlib
+       - Generate password to send email using smtplib
     ```
-5. **System requirements
-    # higher is the specs better the model will perfomrm
+
+5. **System requirements**
    ```
-    - 8gb+ ram (higher is better)
-    - 250 gb+ storage 
-    - i5 processor or m processor 
-    - gpu / npu
+    - 8GB+ RAM (higher is better)
+    - 250GB+ storage 
+    - i5 processor or M processor 
+    - GPU / NPU
    ```
-  
-   
 
 ## Installation
  
@@ -79,55 +80,7 @@ Before running the project, ensure you have the following installed:
    cd JARVIS
    ```
 
-2.**File structure**
-```bash .
-.
-├── details.txt
-├── device_ips.txt
-├── main.py
-├── requirements.txt
-├── src
-│   ├── BRAIN
-│   │   ├── func_call.py
-│   │   ├── lm_ai.py
-│   │   └── text_to_info.py
-│   ├── CONVERSATION
-│   │   ├── speech_to_text.py
-│   │   ├── t_s.py
-│   │   ├── test_speech.py
-│   │   └── text_to_speech.py
-│   ├── DATA
-│   │   ├── email.py
-│   │   ├── msg.py
-│   │   ├── phone_details.py
-│   │   ├── share_func.py
-│   │   └── tools.json
-│   ├── FUNCTION
-│   │   ├── Email_send.py
-│   │   ├── adb_connect.bat
-│   │   ├── adb_connect.sh
-│   │   ├── ai_op.py
-│   │   ├── app_op.py
-│   │   ├── function_chain.py
-│   │   ├── get_env.py
-│   │   ├── greet_time.py
-│   │   ├── incog.py
-│   │   ├── link_op.py
-│   │   ├── news.py
-│   │   ├── phone_call.py
-│   │   ├── random_respon.py
-│   │   ├── run_function.py
-│   │   ├── weather.py
-│   │   └── youtube_downloader.py
-│   ├── KEYBOARD
-│   │   ├── key_lst.py
-│   │   └── key_prs_lst.py
-│   └── VISION
-│       └── eye.py
-
-8 directories, 35 file
-```
-3. **Install Dependencies**:
+2. **Install Dependencies**:
    Install the required Python libraries by running:
    ```bash
    pip install -r requirements.txt
@@ -147,59 +100,19 @@ Before running the project, ensure you have the following installed:
    [= =] Say 'hey jarvis' to activate, and 'stop' to deactivate. Say 'exit' to quit.
    ```
 
-## Using the Assistant
-
-### Starting a Conversation
-
-- Say **"Hey Jarvis"** to activate the assistant.
-- Jarvis will enter listening mode and wait for your commands.
-
-### Giving Commands
-
-- Speak clearly and concisely. For example:
-  - **"What is the weather today?"**
-  - **"Summarize the latest news."**
-  - **"Draft an email."**
-
-### Stopping Listening Mode
-
-- Say **"Stop"** to deactivate listening mode.
-- Jarvis will process the accumulated command text (if any) and stop listening for further input.
-
-### Quitting the Application
-
-- Say **"Exit"** to terminate the program. Jarvis will bid you goodbye before exiting.
-
-## Error Handling
-
-If an error occurs during execution, Jarvis will notify you with a polite message and log the issue for debugging purposes. Example:
-```python
-Error: [specific error message]
-```
-
-## Timeout Behavior
-
-- If no commands are received for 5 minutes, listening mode will automatically deactivate, and Jarvis will notify you about the timeout.
-
-## Example Workflow
-
-1. Start the application with `python main.py`.
-2. Jarvis greets you and waits for activation.
-3. Say "Hey Jarvis" to activate.
-4. Provide a command, e.g., "What's the weather like today?"
-5. Jarvis responds with the summarized weather report.
-6. Say "Stop" to end listening mode or "Exit" to quit the application.
-
-## Transition to Function Calling Method
+## Transition in Function Calling Methods
 
 ### Previous Similarity Score Method
 
 Earlier implementations relied on similarity score-based methods to match user commands with pre-defined intents. While functional, this approach had limitations in handling diverse or complex queries effectively.
 
-### Function Calling Using LLMs
+### Shift to AI-Based Function Calling
 
-Function calling is a modern approach leveraging the capabilities of Large Language Models (LLMs). It enables dynamic task execution by interpreting natural language inputs and mapping them to functions programmatically. This method is more adaptable and efficient for AI-driven applications.
-Function calling enables developers to connect language models to external data and systems. You can define a set of functions as tools that the model has access to, and it can use them when appropriate based on the conversation history. You can then execute those functions on the application side, and provide results back to the model.
+To overcome these limitations, we transitioned to AI-powered function calling. Initially, we implemented a **single-function call** method, where AI models determined and executed one function at a time. Now, we have further improved the system by allowing **multiple function calls simultaneously**, enabling users to execute several commands at once, even if their inputs and outputs are unrelated. This enhancement significantly boosts efficiency and functionality.
+
+### Model Performance
+
+We are using the **Hermes-2-Pro-Mistral-7B-GGUF** model, which achieves **80-85% accuracy** on function-calling benchmarks (BFCL) and structured data processing. This improvement allows for more precise and structured output generation, making AI-driven interactions more reliable.
 
 ### Implementation Details
 
@@ -229,51 +142,46 @@ Function calling enables developers to connect language models to external data 
      speak(loading_message)
      ```
 
-4. **Error Handling**:
-   - The system includes robust error handling to manage unexpected issues.
-   - Example:
-     ```python
-     try:
-         response = execute_function_call(response_dic)
-     except Exception as e:
-         speak("An unexpected error occurred. Please try again.")
-         print(f"Error: {e}")
-     ```
+### ADB Installation & Setup
 
-5. **Retry Mechanism**:
-   - A retry mechanism ensures reliability when interacting with AI services.
-   - Example:
-     ```python
-     def send_to_ai_with_retry(prompt, retries=3, delay=2):
-         for _ in range(retries):
-             try:
-                 return send_to_ai(prompt)
-             except Exception:
-                 time.sleep(delay)
-         speak("AI service is not responding. Please try again later.")
-         return None
-     ```
+#### Install ADB on Windows, macOS, and Linux:
+```bash
+# Windows:
+winget install --id=AndroidPlatformTools.AndroidPlatformTools
 
-## Advantages of Function Calling
+# macOS:
+brew install android-platform-tools
 
-- Enhanced accuracy and flexibility in handling diverse queries.
-- Reduced dependency on pre-defined intents.
-- Scalable for adding new functionalities dynamically.
+# Linux (Debian/Ubuntu):
+sudo apt install android-tools-adb
+```
 
-## Contributing
+#### Enable Developer Options & Connect to ADB
+1. **Enable Developer Mode on Phone:**
+   - Go to **Settings > About Phone > Tap 'Build Number' 7 times**.
+2. **Enable ADB Debugging:**
+   - Go to **Settings > Developer Options > Enable USB Debugging & Wireless Debugging**.
+3. ** when you connect you device on a same network , the scirpt adb_connect.sh is there , that will automatically connect with the phone **
+4. ** it will try all sort of connections , and also store the new device_ip in device_ips.txt file..**
+5. ** also included method to try dirct using usb , then try for .venv , then try all saved device_ip in device_ips.txt file.**
 
-Feel free to contribute to this project by opening issues or submitting pull requests. Follow these steps:
-1. Fork the repository.
-2. Create a feature branch: `git checkout -b feature-name`
-3. Commit your changes: `git commit -m 'Add new feature'`
-4. Push to the branch: `git push origin feature-name`
-5. Open a pull request.
+### Manual method 
+1. **Get Device IP & Connect via ADB:**
+   ```bash
+   adb tcpip 5555
+   adb connect <device_ip>:5555
+   ```
+2. **USB Method:**
+   ```bash
+   adb devices
+   adb shell ip -f inet addr show wlan0
+   ```
+   Update the `.env` file with the device IP.
 
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
+### Contributing & License
+For contributions, open a PR. This project is licensed under MIT.
 
 ## Contact
-
 For any questions or feedback, please contact the project maintainer at [ganeshnikhil124@gmail.com].
+
 
