@@ -57,26 +57,12 @@ def parse_tool_calls(response: str) -> Union[List[dict], None]:
     
     return None
 
-
-# def parse_tool_call(response: str) -> Union[dict, None]:
-#     print(response)
-#     match = re.search(r"<tool_call>\s*(\{.*?\})\s*</tool_call>", response, re.DOTALL)
-#     if match:
-#         try:
-#             return json.loads(match.group(1).replace("'", '"'))
-#         except json.JSONDecodeError as e:
-#             print(f"Error parsing function call JSON: {e}")
-#     else:
-#         print("No function call data found.")
-#     return None
-
 def create_function_call(user_query: str) -> Union[str, None]:
     messages = [SYSTEM_MESSAGE, {"role": "user", "content": user_query}]
 
     try:
         completion = client.chat.completions.create(
             model="NousResearch/Hermes-2-Pro-Mistral-7B-GGUF",
-            # model="heBloke/Mistral-7B-Instruct-v0.2-GGUF",
             messages=messages,
             temperature=0
         )
