@@ -4,13 +4,28 @@ import speech_recognition as sr
 def recognize_speech():
     """Recognize speech from the microphone."""
     recognizer = sr.Recognizer()
-    recognizer.dynamic_energy_threshold = True
-    recognizer.energy_threshold = 3000
-    recognizer.dynamic_energy_adjustment_damping = 0.010  # less more active
-    recognizer.dynamic_energy_ratio = 1.0
-    recognizer.pause_threshold = 0.8
-    recognizer.operation_timeout = None
-    recognizer.non_speaking_duration = 0.5
+    # recognizer.dynamic_energy_threshold = True
+    # recognizer.energy_threshold = 30000
+    # recognizer.dynamic_energy_adjustment_damping = 0.010  # less more active
+    # recognizer.dynamic_energy_ratio = 1.0
+    # recognizer.pause_threshold = 0.8
+    # recognizer.operation_timeout = None
+    # recognizer.non_speaking_duration = 0.5
+    
+    # recognizer.energy_threshold = 3000
+    # recognizer.dynamic_energy_adjustment_damping =  0.07  # less more active
+    # recognizer.dynamic_energy_ratio = 1.5
+    # recognizer.pause_threshold = 0.6
+    # recognizer.operation_timeout = None
+    # recognizer.non_speaking_duration = 0.5
+    
+    
+    recognizer.energy_threshold = 10000  # Higher to filter out background noise
+    recognizer.dynamic_energy_adjustment_damping = 0.04  # Fast adjustments to changing noise
+    recognizer.dynamic_energy_ratio = 2.0  # Speech must be significantly louder than noise
+    recognizer.pause_threshold = 0.7  # Shorter pauses allowed
+    recognizer.operation_timeout = 10  # Stops if no speech for 10s
+    recognizer.non_speaking_duration = 0.6  # Ends sooner if background noise is stable
 
     try:
         available = sr.Microphone.list_microphone_names()

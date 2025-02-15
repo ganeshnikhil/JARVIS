@@ -3,9 +3,9 @@ import base64
 import cv2 
 from src.BRAIN.lm_ai import client  # point to local server 
 from PIL import Image 
+import typing 
 
-
-def resize_image(image_path , require_width=336 , require_height=336):
+def resize_image(image_path:str , require_width=336 , require_height=336) -> float:
     with Image.open(image_path) as img:
         width, height = img.size
         if height <= require_height and width <= require_width:
@@ -19,7 +19,7 @@ def resize_image(image_path , require_width=336 , require_height=336):
             return False 
         return True 
     
-def capture_image_and_save(image_path="captured_image.png"):
+def capture_image_and_save(image_path="captured_image.png") -> None:
     # Initialize the camera
     cap = cv2.VideoCapture(0)  # 0 is the default camera
 
@@ -44,7 +44,7 @@ def capture_image_and_save(image_path="captured_image.png"):
         cap.release()
         cv2.destroyAllWindows()
 
-def detect_object(image_path , model="Lewdiculous/Eris_PrimeV4-Vision-32k-7B-GGUF-IQ-Imatrix"):
+def detect_object(image_path:str , model="Lewdiculous/Eris_PrimeV4-Vision-32k-7B-GGUF-IQ-Imatrix") -> list[str]:
     # Ask the user for a path on the filesystem:
     # Read the image and encode it to base64:
     

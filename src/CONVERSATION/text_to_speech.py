@@ -1,14 +1,14 @@
 
 import pyttsx3
 from random import randint
-def speak(text):
+def speak(text:str) -> None:
     try:
         # Initialize the TTS engine
         engine = pyttsx3.init()
         # Set the speaking rate
         try:
             rate = engine.getProperty('rate')
-            engine.setProperty('rate', 155)  # Setting up a new speaking rate
+            engine.setProperty('rate', 154)  # Setting up a new speaking rate
         except Exception as e:
             print(f"Error setting rate: {e}")
 

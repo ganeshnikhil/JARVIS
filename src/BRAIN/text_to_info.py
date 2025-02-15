@@ -1,11 +1,11 @@
-
+# hugging face token : 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
 
 from openai import OpenAI
 import json 
 client = OpenAI(base_url="http://localhost:1234/v1", api_key="lm-studio")
 
 
-def send_to_ai(prompt, max_token = 2000 , model="NousResearch/Hermes-2-Pro-Mistral-7B-GGUF"):
+def send_to_ai(prompt, max_token = 2000 , model="NousResearch/Hermes-2-Pro-Mistral-7B-GGUF") -> str:
     try:
         response = client.chat.completions.create(
             model=model,
@@ -13,7 +13,7 @@ def send_to_ai(prompt, max_token = 2000 , model="NousResearch/Hermes-2-Pro-Mistr
                 {"role": "system", "content": "You are an intelligent system designed to serve . Please do the task as requested by the user. Follow the instructions carefully and perform the action."},
                 {"role": "user", "content": str(prompt)}
             ],
-            temperature=0.7,
+            temperature=0.8,
             max_tokens=max_token,
             top_p=1
         )

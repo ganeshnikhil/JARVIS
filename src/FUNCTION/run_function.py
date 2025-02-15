@@ -7,7 +7,8 @@ from src.FUNCTION.link_op import search_youtube , open_github , open_instagram ,
 from src.BRAIN.text_to_info import send_to_ai 
 from src.FUNCTION.incog import private_mode 
 from src.FUNCTION.Email_send import send_email
-
+from src.FUNCTION.phone_call import make_a_call
+from typing import Union
 FUNCTION_MAP = {
     'search_youtube': search_youtube,
     'weather_report': weather_report,
@@ -21,10 +22,11 @@ FUNCTION_MAP = {
     'send_to_ai':send_to_ai,
     'private_mode':private_mode,
     'send_email':send_email,
+    'make_a_call':make_a_call
 }
 
 
-def execute_function_call(function_call: dict) -> None:
+def execute_function_call(function_call: dict) -> Union[None,dict,list]:
     """
     Execute a function based on the function call dictionary
     
@@ -47,6 +49,7 @@ def execute_function_call(function_call: dict) -> None:
         if keys:
             # Call the function with unpacked arguments
             output = func(*keys)
+            
         else:
             print("[*] No parameters provided .....")
             output = func()

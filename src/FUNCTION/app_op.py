@@ -2,7 +2,7 @@ from src.FUNCTION.get_env import load_variable ,check_os
 from os import system 
 
 
-def start_app(path):
+def start_app(path:str) -> bool:
     os_name = check_os()
     if os_name == "Linux":
         system(f"{path}")
@@ -16,7 +16,7 @@ def start_app(path):
     return True 
         
         
-def app_runner(name):
+def app_runner(name:str) -> bool:
     path = load_variable(name)
     flag = start_app(path)
     return flag 

@@ -1,6 +1,6 @@
 from datetime import datetime
 
-def time_of_day():
+def time_of_day() -> str:
     current_hour = datetime.now().hour
     
     if 5 <= current_hour < 12:

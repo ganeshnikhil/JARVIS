@@ -11,6 +11,7 @@
         {"name": "open_instagram", "description": "Open Instagram in a web browser.", "parameters": {}},
         {"name": "open_youtube", "description": "Open YouTube in a web browser.", "parameters": {}},
         {"name": "private_mode", "description": "Search in the incognito or private mode for specific topic","parameters":{"topic":"string" , "required":["topic"]}},
+        {"name": "make_a_call","description":"make a phone call to provided contact name." , "parameters":{"name":"string" , "required":["name"]}},
         {"name":"send_email","description":"send email on gmail","parameters":{}}
     ]
 }

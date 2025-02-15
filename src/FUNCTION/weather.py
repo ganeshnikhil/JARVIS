@@ -13,7 +13,7 @@ def get_lat_lng(name: str) -> tuple:
 
 
 
-def weather_report(city):
+def weather_report(city:str) -> dict:
     report = {}
     api_key = load_variable("Weather_api")
     lati , long = get_lat_lng(city)

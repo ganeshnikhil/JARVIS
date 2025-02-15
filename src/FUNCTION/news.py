@@ -1,7 +1,8 @@
 import requests
 from src.FUNCTION.get_env import load_variable
+from typing import Union
 # in , us 
-def news_headlines( top = 10):
+def news_headlines(top = 10) -> Union[list[str] , None]:
     api_key = load_variable("News_api")
     country = load_variable("Country")
     headlines = []

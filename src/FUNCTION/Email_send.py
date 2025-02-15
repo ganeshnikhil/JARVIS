@@ -5,7 +5,7 @@ from src.FUNCTION.get_env import load_variable
 from src.DATA.email import email_prompts 
 from src.BRAIN.text_to_info import send_to_ai 
 
-def initate_email(subject, email_content):
+def initate_email(subject:str, email_content:str) -> None:
     smtp_server = "smtp.gmail.com"
     port = 587
     password = load_variable("Password_email")
@@ -35,7 +35,7 @@ def initate_email(subject, email_content):
     except Exception as e:
         print(f"Error: {e}")
 
-def send_email():
+def send_email() -> None:
     select_template = input("Select an email template (job, friend, meeting, doctor, leave, product): ")
     if select_template not in email_prompts:
         print("[+] Invalid template selection.")
