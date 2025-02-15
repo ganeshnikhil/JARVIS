@@ -81,8 +81,11 @@ Before running the project, ensure you have the following installed:
 
 2.**File structure**
 ```bash .
+.
 ├── details.txt
+├── device_ips.txt
 ├── main.py
+├── requirements.txt
 ├── src
 │   ├── BRAIN
 │   │   ├── func_call.py
@@ -96,16 +99,22 @@ Before running the project, ensure you have the following installed:
 │   ├── DATA
 │   │   ├── email.py
 │   │   ├── msg.py
+│   │   ├── phone_details.py
+│   │   ├── share_func.py
 │   │   └── tools.json
 │   ├── FUNCTION
 │   │   ├── Email_send.py
+│   │   ├── adb_connect.bat
+│   │   ├── adb_connect.sh
 │   │   ├── ai_op.py
 │   │   ├── app_op.py
+│   │   ├── function_chain.py
 │   │   ├── get_env.py
 │   │   ├── greet_time.py
 │   │   ├── incog.py
 │   │   ├── link_op.py
 │   │   ├── news.py
+│   │   ├── phone_call.py
 │   │   ├── random_respon.py
 │   │   ├── run_function.py
 │   │   ├── weather.py
@@ -115,9 +124,10 @@ Before running the project, ensure you have the following installed:
 │   │   └── key_prs_lst.py
 │   └── VISION
 │       └── eye.py
+├── test.py
 └── tools.py
 
-8 directories, 28 files
+8 directories, 37 file
 ```
 3. **Install Dependencies**:
    Install the required Python libraries by running:
