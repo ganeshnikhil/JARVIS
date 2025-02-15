@@ -179,7 +179,7 @@ sudo apt install android-tools-adb
    Update the `.env` file with the device IP.
 
 
-###Why This Approach is Better
+### Why This Approach is Better
 
   - More Accurate Matching: AI models analyze queries contextually rather than relying on similarity scores.
   
@@ -191,7 +191,7 @@ sudo apt install android-tools-adb
   
   - Retry Mechanism: Reduces failure rates when interacting with AI services.
   
-###ADB Integration for Phone Automation
+### ADB Integration for Phone Automation
   
  - We have now integrated Android Debug Bridge (ADB) to enable phone automation via voice commands. With ADB, users can:
   
