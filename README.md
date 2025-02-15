@@ -161,9 +161,9 @@ sudo apt install android-tools-adb
    - Go to **Settings > About Phone > Tap 'Build Number' 7 times**.
 2. **Enable ADB Debugging:**
    - Go to **Settings > Developer Options > Enable USB Debugging & Wireless Debugging**.
-3. ** when you connect you device on a same network , the scirpt adb_connect.sh is there , that will automatically connect with the phone **
-4. ** it will try all sort of connections , and also store the new device_ip in device_ips.txt file..**
-5. ** also included method to try dirct using usb , then try for .venv , then try all saved device_ip in device_ips.txt file.**
+3. **when you connect you device on a same network , the scirpt adb_connect.sh is there , that will automatically connect with the phone**
+4. **It will try all sort of connections , and also store the new device_ip in device_ips.txt file**
+5. **Also included method to try dirct using usb , then try for .venv , then try all saved device_ip in device_ips.txt file.**
 
 ### Manual method 
 1. **Get Device IP & Connect via ADB:**
